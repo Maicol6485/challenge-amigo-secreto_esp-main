@@ -62,3 +62,4 @@ function limpiarResultado() {
   resultado.innerHTML = '';
 }
 
+// prueba
