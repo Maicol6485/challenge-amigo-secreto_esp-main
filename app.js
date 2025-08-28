@@ -61,6 +61,3 @@ function renderLista() {
 function limpiarResultado() {
   resultado.innerHTML = '';
 }
-
-// prueba
-//prueba 2
