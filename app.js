@@ -1,14 +1,11 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 
 let amigos = [];
-
-// Utilizar const cuando la variable no cambia ej; nombres
 const input = document.getElementById('amigo');
 const lista = document.getElementById('listaAmigos');
 const resultado = document.getElementById('resultado');
 
-// Hacer las funciones globales porque se usan con onclick en el HTML
-window.agregarAmigo = function agregarAmigo() {
+function agregarAmigo() {
   const nombre = (input.value || '').trim();
 
   if (!nombre) {
@@ -16,7 +13,6 @@ window.agregarAmigo = function agregarAmigo() {
     return;
   }
 
-  // Validación: Solo letras
   if (/\d/.test(nombre)) {
     alert('El nombre no puede contener números.');
     return;
@@ -26,9 +22,9 @@ window.agregarAmigo = function agregarAmigo() {
   input.value = '';
   renderLista();
   limpiarResultado();
-};
+}
 
-window.sortearAmigo = function sortearAmigo() {
+function sortearAmigo() {
   if (amigos.length === 0) {
     alert('No hay nombres en la lista.');
     return;
@@ -40,14 +36,14 @@ window.sortearAmigo = function sortearAmigo() {
     <li>🎉 El amigo secreto es: <strong>${ganador}</strong> 🎉</li>
     <button class="button-reset" onclick="reiniciarJuego()">♻️ Reiniciar</button>
   `;
-};
+}
 
-window.reiniciarJuego = function reiniciarJuego() {
+function reiniciarJuego() {
   amigos = [];
   lista.innerHTML = '';
   resultado.innerHTML = '';
   input.value = '';
-};
+}
 
 function renderLista() {
   if (amigos.length === 0) {
